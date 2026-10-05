@@ -18,3 +18,8 @@
   prior verification flaws do not support regular-stack adoption.
 - Use Apache-2.0 and retain upstream attribution for derived prompt evidence.
   Publish only reviewed synthetic/model evidence, not VM credentials or archives.
+
+- Select a public portfolio repository and draft PR for available free GitHub
+  checks after Jake delegated the destination choice. Preserve the runtime
+  snapshot and disclose the unpatched NLTK advisory rather than silently
+  changing historical evidence or suppressing the finding. Hold merge for review.

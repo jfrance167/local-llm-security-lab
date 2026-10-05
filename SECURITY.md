@@ -11,3 +11,22 @@ Garak 0.17.0 is an alpha project with a broad dependency surface. This lab uses 
 Ruflo's selected installed dependency graph had three high advisory entries (`toml` and its two dependent packages). The full lockfile, including omitted optional packages, had 39 entries including a critical `protobufjs` entry. No exploit reachability was proven. Existing Ruflo witness-verification weaknesses and unsafe README execution examples were recorded separately; they were not relied on as trust controls. Keep Ruflo out of the regular stack pending further review/remediation.
 
 Before publication or reuse, manually review the parser, relay, VM network rules, generated drafts and evidence. Do not commit private keys, VM images, credentials or raw diagnostic archives. Report vulnerabilities privately to the repository owner through an existing trusted channel; this project does not authorize disclosure to third parties.
+
+## Dependency review — October 5, 2026
+
+GitHub compared the PR dependency graph with the placeholder main branch: 39
+added entries and one advisory, [GHSA-8mgp-746c-j5xp](https://github.com/advisories/GHSA-8mgp-746c-j5xp),
+a high-severity NLTK model-artifact filesystem sandbox bypass affecting the
+recorded `nltk==3.10.3`. The advisory lists no patched version. Preconditions
+include relying on NLTK pathsec enforcement while untrusted workflows control
+model import/export paths.
+
+The driver does not directly call the listed model persistence/parser APIs.
+Full transitive reachability was not proven. Guest OS isolation and worker
+filesystem permissions, rather than NLTK pathsec, are the containment controls.
+The standard-library analyzer and CI tests do not install this runtime snapshot.
+Preserve its versions as historical experiment evidence; do not treat it as a
+recommended secure environment. Repeating the scan requires owner risk review
+or a separately verified fixed environment. No alert was dismissed or suppressed.
+The PR remains draft pending that review; these findings do not justify stack
+adoption.

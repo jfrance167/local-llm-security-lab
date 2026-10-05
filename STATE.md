@@ -16,7 +16,8 @@ restricted worker firewall and boundary tests; pinned script-disabled Ruflo
 installation; genuine MCP discovery/execution; three local worker drafts with
 preserved failures/corrections; independent tests and final reviewed analyzer;
 two finite real Garak runs; manual output interpretation; security/attribution
-and learning documentation; proposed pinned Actions security workflows.
+and learning documentation; pinned Actions security workflows; public repository
+and draft PR #1 at https://github.com/jfrance167/local-llm-security-lab/pull/1.
 
 Verification: 22 Python 3.13 unittest cases pass locally; Bandit 1.9.4 has zero
 findings on Python application/tools. Both Garak runs exited 0 with four scored
@@ -25,11 +26,12 @@ process stopped. No other VM, service, host boot option or instruction changed.
 
 Limitations: final analyzer suite ran locally after VM-copy approval timed out
 twice; it was not rerun in Linux. Initial/corrected worker tests ran in Debian.
-GitHub workflows/protection/secret-scanning eligibility and remote checks require
-an owned published destination; local preparations do not prove remote passes.
+GitHub Ubuntu tests/Bandit and Python/JavaScript CodeQL passed for publication
+commit 9f35c0f. No open code-scanning or secret-scanning alerts were returned.
+Dependency comparison found an unpatched high NLTK advisory (see SECURITY.md).
 Model digest was not captured at scan time. No standalone JS SAST run locally;
 relay had source review, syntax and route/model-denial checks, with CodeQL JS
-prepared. Ruflo dependency advisories and earlier verification issues remain.
+completed remotely. Ruflo dependency advisories and earlier verification issues remain.
 
 Worker choice: local Ollama first, actual Ruflo requests to local model only;
 one public North request after local draft inadequacy returned no text and stopped.
@@ -44,7 +46,13 @@ used for the earlier real model experiment; raw results remain unchanged.
 Read-only worker readiness refreshed. This verification/security stage requires
 no drafting worker or classifier inference; no new provider research needed.
 
-Next: run GitHub checks, inspect scanning alerts/settings, prepare reviewed PR,
-and wait for Jake's merge decision.
+GitHub baseline: main protected with strict required checks, administrator
+enforcement, conversation resolution, and force-push/deletion denial. Workflow
+token permissions read-only by default; secret scanning, push protection,
+Dependabot alerts and security updates enabled. Single-owner review count is zero;
+Jake's manual review and merge decision remain required by this workflow.
+
+Next: verify final documentation commit checks; keep PR draft for Jake's NLTK
+risk review and merge decision. No release, deployment or PR merge performed.
 Recommendation: keep Ruflo experimental, do not add to the regular stack yet.
 Private raw pilot evidence is outside this checkout; see docs/worker-evaluation.md.
