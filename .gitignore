@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.test-tmp/
+.private/
+*.vdi
+*.iso
+*.pem
+.env
+reports/
