@@ -24,10 +24,13 @@ findings on Python application/tools. Both Garak runs exited 0 with four scored
 matches each, zero unscored. VM state poweroff verified and exact temporary relay
 process stopped. No other VM, service, host boot option or instruction changed.
 
-Limitations: final analyzer suite ran locally after VM-copy approval timed out
-twice; it was not rerun in Linux. Initial/corrected worker tests ran in Debian.
+Verification follow-up: Jake requested testing and a commit on October 5.
+All 22 Python tests, 9 offline relay tests, relay syntax, Bandit and both saved
+report analyses passed again locally; no implementation fix was needed.
 GitHub Ubuntu tests/Bandit and Python/JavaScript CodeQL passed for publication
-commit 9f35c0f. No open code-scanning or secret-scanning alerts were returned.
+commit b303d2106da56dc475e138de86ac4590b8b4e9ac. This supplies a Linux test run;
+the final suite was not rerun inside the pilot VM after access timed out twice.
+Initial/corrected worker tests ran in Debian. No open code-scanning or secret-scanning alerts were returned.
 Dependency comparison found an unpatched high NLTK advisory (see SECURITY.md).
 Model digest was not captured at scan time. No standalone JS SAST run locally;
 relay had source review, syntax and route/model-denial checks, with CodeQL JS
@@ -52,7 +55,7 @@ token permissions read-only by default; secret scanning, push protection,
 Dependabot alerts and security updates enabled. Single-owner review count is zero;
 Jake's manual review and merge decision remain required by this workflow.
 
-Next: verify final documentation commit checks; keep PR draft for Jake's NLTK
+Next: keep PR draft for Jake's NLTK
 risk review and merge decision. No release, deployment or PR merge performed.
 Recommendation: keep Ruflo experimental, do not add to the regular stack yet.
 Private raw pilot evidence is outside this checkout; see docs/worker-evaluation.md.
